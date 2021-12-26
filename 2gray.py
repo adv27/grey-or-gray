@@ -29,8 +29,7 @@ def get_text(img):
     for y in range(height):
         for x in range(width):
             pixel = img.getpixel((x, y))
-            index = int(pixel[0]//25.5)
-            index -= 0 if index == 0 else 1
+            index = int(pixel[0]//25.5) - (0 if index == 0 else 1)
             character_representation = levels[index]
             text += character_representation
         text += '\n'
